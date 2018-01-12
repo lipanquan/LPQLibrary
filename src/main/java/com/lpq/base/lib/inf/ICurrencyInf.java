@@ -18,6 +18,13 @@ public interface ICurrencyInf {
     Application getApplication();
 
     /**
+     * 获取软键盘的状态
+     *
+     * @return 若返回true，则表示输入法打开
+     */
+    boolean getInputMethodState();
+
+    /**
      * 设置标题栏的高度
      *
      * @param titleHeight 标题栏的高度

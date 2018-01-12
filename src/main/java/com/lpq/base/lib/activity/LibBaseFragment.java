@@ -8,6 +8,7 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -114,7 +115,7 @@ public class LibBaseFragment extends Fragment implements ICurrencyInf, View.OnCl
 
     @Override
     public void setTitleLeftDrawableLeft(int drawableLeft) {
-        tv_title_title.setCompoundDrawablesWithIntrinsicBounds(drawableLeft, 0, 0, 0);
+        tv_title_left.setCompoundDrawablesWithIntrinsicBounds(drawableLeft, 0, 0, 0);
     }
 
     @Override
@@ -257,6 +258,11 @@ public class LibBaseFragment extends Fragment implements ICurrencyInf, View.OnCl
     @Override
     public void openKeyboard() {
         getBaseActivity().openKeyboard();
+    }
+
+    @Override
+    public boolean getInputMethodState() {
+        return getBaseActivity().getInputMethodState();
     }
 
     @Override

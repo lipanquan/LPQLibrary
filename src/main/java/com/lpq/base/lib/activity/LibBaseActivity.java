@@ -103,6 +103,7 @@ public abstract class LibBaseActivity extends AppCompatActivity
         return false;
     }
 
+    @Override
     public void closeKeyboard() {
         try {
             IBinder windowToken = getCurrentFocus().getWindowToken();
@@ -115,8 +116,14 @@ public abstract class LibBaseActivity extends AppCompatActivity
         }
     }
 
+    @Override
     public void openKeyboard() {
         inputMethodManager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+    }
+
+    @Override
+    public boolean getInputMethodState() {
+        return getWindow().getAttributes().softInputMode == WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE;
     }
 
     @Override
@@ -181,7 +188,7 @@ public abstract class LibBaseActivity extends AppCompatActivity
 
     @Override
     public void setTitleLeftDrawableLeft(int drawableLeft) {
-        tv_title_title.setCompoundDrawablesWithIntrinsicBounds(drawableLeft, 0, 0, 0);
+        tv_title_left.setCompoundDrawablesWithIntrinsicBounds(drawableLeft, 0, 0, 0);
     }
 
     @Override

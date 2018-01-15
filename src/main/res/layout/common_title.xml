@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:drawableLeft="@mipmap/back"
+        android:drawablePadding="5dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:visibility="gone" />

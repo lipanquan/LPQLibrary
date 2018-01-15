@@ -402,6 +402,11 @@ public abstract class LibBaseActivity extends AppCompatActivity
     }
 
     @Override
+    public String getResString(@StringRes int stringRseId, Object... formatArgs) {
+        return getResources().getString(stringRseId, formatArgs);
+    }
+
+    @Override
     public void setViewVisible(@NonNull View view) {
         view.setVisibility(View.VISIBLE);
     }
@@ -472,12 +477,12 @@ public abstract class LibBaseActivity extends AppCompatActivity
     }
 
     @Override
-    public Boolean getBoolean(String key) {
+    public boolean getBoolean(String key) {
         return SharedPreferencesUtils.getInstance(this).getBoolean(key, false);
     }
 
     @Override
-    public Boolean getBoolean(String key, boolean defValue) {
+    public boolean getBoolean(String key, boolean defValue) {
         return SharedPreferencesUtils.getInstance(this).getBoolean(key, defValue);
     }
 
@@ -487,7 +492,7 @@ public abstract class LibBaseActivity extends AppCompatActivity
     }
 
     @Override
-    public Integer getInt(String key) {
+    public int getInt(String key) {
         return SharedPreferencesUtils.getInstance(this).getInt(key);
     }
 
@@ -497,7 +502,7 @@ public abstract class LibBaseActivity extends AppCompatActivity
     }
 
     @Override
-    public Float getFloat(String key) {
+    public float getFloat(String key) {
         return SharedPreferencesUtils.getInstance(this).getFloat(key);
     }
 
@@ -507,7 +512,7 @@ public abstract class LibBaseActivity extends AppCompatActivity
     }
 
     @Override
-    public Long getLong(String key) {
+    public long getLong(String key) {
         return SharedPreferencesUtils.getInstance(this).getLong(key);
     }
 

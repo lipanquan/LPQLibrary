@@ -1,6 +1,5 @@
 package com.lpq.base.lib.activity;
 
-import android.app.Application;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.ColorRes;
@@ -8,7 +7,6 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -241,11 +239,6 @@ public class LibBaseFragment extends Fragment implements ICurrencyInf, View.OnCl
         view.setVisibility(View.GONE);
     }
 
-    @Override
-    public Application getApplication() {
-        return getActivity().getApplication();
-    }
-
     protected LibBaseActivity getBaseActivity() {
         return (LibBaseActivity) getActivity();
     }
@@ -372,6 +365,11 @@ public class LibBaseFragment extends Fragment implements ICurrencyInf, View.OnCl
     }
 
     @Override
+    public String getResString(@StringRes int stringRseId, Object... formatArgs) {
+        return getResources().getString(stringRseId, formatArgs);
+    }
+
+    @Override
     public int getResColor(@ColorRes int id) {
         return getResources().getColor(id);
     }
@@ -387,12 +385,12 @@ public class LibBaseFragment extends Fragment implements ICurrencyInf, View.OnCl
     }
 
     @Override
-    public Boolean getBoolean(String key) {
+    public boolean getBoolean(String key) {
         return getBaseActivity().getBoolean(key);
     }
 
     @Override
-    public Boolean getBoolean(String key, boolean defValue) {
+    public boolean getBoolean(String key, boolean defValue) {
         return getBaseActivity().getBoolean(key, defValue);
     }
 
@@ -402,7 +400,7 @@ public class LibBaseFragment extends Fragment implements ICurrencyInf, View.OnCl
     }
 
     @Override
-    public Integer getInt(String key) {
+    public int getInt(String key) {
         return getBaseActivity().getInt(key);
     }
 
@@ -412,7 +410,7 @@ public class LibBaseFragment extends Fragment implements ICurrencyInf, View.OnCl
     }
 
     @Override
-    public Float getFloat(String key) {
+    public float getFloat(String key) {
         return getBaseActivity().getFloat(key);
     }
 
@@ -422,7 +420,7 @@ public class LibBaseFragment extends Fragment implements ICurrencyInf, View.OnCl
     }
 
     @Override
-    public Long getLong(String key) {
+    public long getLong(String key) {
         return getBaseActivity().getLong(key);
     }
 
